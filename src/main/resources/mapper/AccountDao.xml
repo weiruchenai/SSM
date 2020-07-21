@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--映射配置文件-->
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace用于隔离SQL语句，后期会有其他作用-->
+<!--/*这里#{}表示占位符，后面调用时会根据函数传入值获取到不同的id*/-->
+<mapper namespace="com.zjut.dao.AccountDao">
+    <!--
+        id : sql id，sql语句的唯一标识符
+        parameterType: 入参的数据类型
+        resultType: 返回结果的数据类型
+        最后一句的#{}表示占位符，后面调用时会根据函数传入值自动解析
+    -->
+    <!--查找所有账户-->
+    <select id="findAll" resultType="com.zjut.domain.Account">
+        SELECT
+        *
+        FROM `account`
+    </select>
+
+    <!--插入用户-->
+    <insert id="save" parameterType="com.zjut.domain.Account">
+        INSERT INTO `account` ( `name`, `money` )
+        VALUES
+        ( #{name},
+          #{money});
+    </insert>
+</mapper>
+
