@@ -9,6 +9,7 @@ import org.junit.Test;
 import java.io.IOException;
 
 public class MybatisTest {
+    //整合后SQLMapConfig中已经注释掉了连接池，要测试该方法应去掉注释
     @Test
     public void mybatisTest() throws IOException {
         //创建工厂

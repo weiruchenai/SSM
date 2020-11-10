@@ -1,3 +1,4 @@
+import com.zjut.service.AccountService;
 import com.zjut.service.impl.AccountServiceImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,7 +12,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class SpringTest {
     @Autowired
     @Qualifier(value = "accountService")
-    private AccountServiceImpl accountService;
+    private AccountService accountService;
 
     @Test
     public void springTest(){

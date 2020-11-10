@@ -6,10 +6,12 @@ import com.zjut.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-@Service("accountService")
+@Transactional
+@Service(value = "accountService")
 public class AccountServiceImpl implements AccountService {
 
     @Autowired
